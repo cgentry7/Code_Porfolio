@@ -2,6 +2,7 @@
 #define TREE_INTERSECTION_NODE_H
 
 #include <vector>
+#include <string>
 #include <nlohmann/json.hpp>
 
 /**
@@ -15,7 +16,7 @@
 class Node {
 public:
 
-    using Nodes = std::vector[*Node];
+    using Nodes = std::vector<Node>;
     using json = nlohmann::json;
 
     /**
@@ -29,38 +30,38 @@ public:
      * @brief Getter for the Node value
      * @return  The value of the Node
      */
-    const string& value() const { return self._value; }
+    const std::string& value() const { return this->_value; }
 
     /**
      * @brief Setter for the Node value
      * @param  The value with which to set the Node to
      */
-    void value(string value) { self._value = value; }
+    void value(std::string value) { this->_value = value; }
 
     /**
      * @brief Getter for the Node children
      * @return  The children of the Node
      */
-    const Nodes& children() const { return self._children; }
+    const Nodes& children() const { return this->_children; }
 
     /**
      * @brief Indicator of whether or not a Node is a Leaf (i.e. has no children)
      * @return  True if Node is Leaf, False otherwise
      */
-    bool is_leaf() const { return self._children.empty();}
+    bool is_leaf() const { return this->_children.empty();}
 
     /**
      * @brief Checks for equality between two nodes
      * @param other The other node to compare against
      * @return  True if the two nodes are equivalent, False otherwise
      */
-    bool operator==(const Node& other) const { return self.to_json() == other.to_json();}
+    bool operator==(const Node& other) const { return this->to_json() == other.to_json();}
 
     /**
      * @brief Adds a child node
      * @param child The child node to be added
      */
-    void add_child(const Node& child); { self._children.push_back(&child);}
+    void add_child(const Node& child) { this->_children.push_back(child);}
 
     /**
      * @brief Determine the intersection of the node tree structure and some other node tree structure
@@ -77,7 +78,7 @@ public:
 
 
 private:
-    string _value;    /*!< The value of the Node*/
+    std::string _value;    /*!< The value of the Node*/
     Nodes _children;  /*!< The children of the Node*/
 };
 
