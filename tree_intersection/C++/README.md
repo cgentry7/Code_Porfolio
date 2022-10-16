@@ -18,7 +18,7 @@ make all
 
 For command line execution, the user may call the main program `tree_intersection` along with an input file:
 ```
-<tree_intersection_dir>/build/source/tree_intersection -i <input_file>
+<tree_intersection_dir>/build/source/tree_intersection <input_file>
 ```
 
 To run the unit & verification tests, simply execute the following:
