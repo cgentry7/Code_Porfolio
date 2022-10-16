@@ -4,17 +4,24 @@ A C++ code for performing a basic tree intersection as part of a coding challeng
 
 Version / Module Requirements
 -----------------------------
-- Written using Python 3.10.6
-- Pytest module required for execution of unit tests
+- CMake Version 3.10 (minimum required)
+- C++ 14 Standard (GNU Compiler)
 
 User Instructions
 ------------------
-For command line execution, the user may call the main program `tree_intersection.py` along with an input file:
+To build the program from the tree_intersection root directory, execute the following:
 ```
-python tree_intersection.py -i <input_file>
+cd build
+cmake .. -DCMAKE_BUILD_TYPE=Debug -G "Unix Makefiles"
+make all
 ```
 
-To run the unit & verification tests, simply execute the following from the `tests` folder:
+For command line execution, the user may call the main program `tree_intersection` along with an input file:
 ```
-python run_tests.py
+<tree_intersection_dir>/build/source/tree_intersection -i <input_file>
+```
+
+To run the unit & verification tests, simply execute the following:
+```
+<tree_intersection_dir>/build/tests/run_tests
 ```
