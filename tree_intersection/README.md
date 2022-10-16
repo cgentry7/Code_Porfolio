@@ -1,19 +1,10 @@
 # Tree Intersection
 
-A Python code for performing a basic tree intersection as part of a coding challenge problem
-
-Version / Module Requirements
------------------------------
-- Written using Python 3.10.6
-- Pytest module required for execution of unit tests
+A code for performing a basic tree intersection as part of a coding challenge problem
 
 User Instructions
 ------------------
-For command line execution, the user may call the main program `tree_intersection.py` along with an input file:
-```
-python tree_intersection.py -i <input_file>
-```
-This will produce an output file `output.json` which has the intersection of the two given trees in the input file.
+See the `README.md` instructions in the respective code folders to see how to execute each version.  Upon execution, the code will produce an output file `output.json` which has the intersection of the two given trees in the input file.
 
 The input and output files represent the trees using JSON format.  For the case below:
 ```
@@ -58,12 +49,6 @@ and the resulting output file:
     }
 }
 ```
-
-To run the unit & verification tests, simply execute the following from the `tests` folder:
-```
-python run_tests.py
-```
-
 Requirements
 ----------------------
 1. Return the intersection of two given (not necessarily binary) trees
