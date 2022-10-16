@@ -1,0 +1,3 @@
+[submodule "tree_intersection/C++/lib/googletest"]
+	path = tree_intersection/C++/lib/googletest
+	url = https://github.com/google/googletest/
