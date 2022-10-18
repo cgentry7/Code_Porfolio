@@ -23,5 +23,5 @@ For command line execution, the user may call the main program `tree_intersectio
 
 To run the unit & verification tests, simply execute the following:
 ```
-<tree_intersection_dir>/build/tests/run_tests
+<tree_intersection_dir>/build/tests/tree_intersection_tst
 ```
