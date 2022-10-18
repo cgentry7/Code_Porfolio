@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <string>
+#include <memory>
 #include <nlohmann/json.hpp>
 
 /**
@@ -16,15 +17,28 @@
 class Node {
 public:
 
-    using Nodes = std::vector<Node>;
+    using UP_Node = std::unique_ptr<Node>;
+    using Nodes = std::vector<UP_Node>;
     using json = nlohmann::json;
+
+    Node() = default;
+    ~Node() = default;
+    Node(const Node&) = delete;            // Remove default copy constructor
+    Node& operator=(const Node&) = delete; // Remove default assignment via reference
+
+    /**
+     * @brief Initializes a new node
+     * @param value The value of the new node
+     * @return The created Node
+     */
+    static UP_Node init_new_node(const std::string& value);
 
     /**
      * @brief Initializes a node using a JSON data structure to build out its tree structure
      * @param input_json JSON data structure with which to fully construct the node and its children
      * @return The Node created from the JSON data structure
      */
-    static Node init_from_json(const json& input_json);
+    static UP_Node init_from_json(const json& input_json);
 
     /**
      * @brief Getter for the Node value
@@ -36,13 +50,13 @@ public:
      * @brief Setter for the Node value
      * @param  The value with which to set the Node to
      */
-    void value(std::string value) { this->_value = value; }
+    void value(const std::string& value) { this->_value = value; }
 
     /**
      * @brief Getter for the Node children
      * @return  The children of the Node
      */
-    const Nodes& children() const { return this->_children; }
+    Nodes& children() { return this->_children; }
 
     /**
      * @brief Indicator of whether or not a Node is a Leaf (i.e. has no children)
@@ -61,14 +75,14 @@ public:
      * @brief Adds a child node
      * @param child The child node to be added
      */
-    void add_child(const Node& child) { this->_children.push_back(child);}
+    void add_child(UP_Node child) { this->_children.push_back(std::move(child));}
 
     /**
      * @brief Determine the intersection of the node tree structure and some other node tree structure
      * @param other The other node tree structure to compare against for the intersection
      * @return  The intersection of the two node trees structures
      */
-    Node intersection(const Node& other) const;
+    UP_Node intersection(const Node& other) const;
 
     /**
      * @brief Returns the node tree structure as a JSON data structure
@@ -79,7 +93,7 @@ public:
 
 private:
     std::string _value;    /*!< The value of the Node*/
-    Nodes _children;  /*!< The children of the Node*/
+    Nodes _children;       /*!< The children of the Node*/
 };
 
 #endif //TREE_INTERSECTION_NODE_H

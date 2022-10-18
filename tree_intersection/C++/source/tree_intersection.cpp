@@ -19,7 +19,7 @@ int main(int argc, char *argv[]) {
 
     std::string input_file_name = argv[1];
 
-    std::vector<Node> trees;
+    Node::Nodes trees;
     std::ifstream input_file(input_file_name);
     auto json_data = json::parse(input_file);
     input_file.close();
@@ -30,9 +30,9 @@ int main(int argc, char *argv[]) {
     }
 
 
-    auto intersection = trees[0].intersection(trees[1]);
+    auto intersection = trees[0]->intersection(*trees[1]);
     std::ofstream output_file("output.json");
-    output_file << intersection.to_json().dump(4) << std::endl;
+    output_file << intersection->to_json().dump(4) << std::endl;
     output_file.close();
 
     return 0;

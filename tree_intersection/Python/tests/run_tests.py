@@ -7,11 +7,6 @@ VERIFICATION_TESTS = ["coding_challenge_example",
                       "repeat_values",
                       "repeat_intersect_branches"]
 
-#VERIFICATION_TESTS = ["coding_challenge_example",
-#                      "different_levels",
-#                      "no_match",
-#                      "repeat_values"]
-
 def run_unit_tests() -> None:   
     os.chdir('unit')
     os.system('pytest -q')

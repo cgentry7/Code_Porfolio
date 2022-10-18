@@ -1,15 +1,20 @@
 #include "Node.h"
 
-
-Node Node::intersection(const Node& other) const
-{
-    Node intersection;
-    return intersection;
+Node::UP_Node Node::init_new_node(const std::string& value) {
+    UP_Node node(new Node());
+    node->value(value);
+    return std::move(node);
 }
 
-Node Node::init_from_json(const json& input_json) {
-    Node node;
-    return node;
+Node::UP_Node Node::init_from_json(const json& input_json) {
+    UP_Node node(new Node());
+    return std::move(node);
+}
+
+Node::UP_Node Node::intersection(const Node& other) const
+{
+    UP_Node intersection(new Node());
+    return std::move(intersection);
 }
 
 Node::json Node::to_json() const {
