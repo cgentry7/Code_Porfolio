@@ -1,4 +1,4 @@
-# Tree Intersection
+# WIP: Tree Intersection  (This is currently a work in progress and has not been finalized yet!)
 
 A C++ code for performing a basic tree intersection as part of a coding challenge problem
 
