@@ -7,8 +7,6 @@
 #include <string>
 #include <array>
 
-#include <iostream>
-
 TEST(TestRepeatValues, test6) {
 
     std::system("../source/tree_intersection_run ../../tests/verification/repeat_values/input.json");
@@ -22,8 +20,6 @@ TEST(TestRepeatValues, test6) {
     while (fgets(buffer.data(), buffer.size(), pipe.get()) != nullptr) {
         differences += buffer.data();
     }
-
-    std::cout << differences << std::endl;
 
     EXPECT_TRUE(differences.empty());
     std::system("rm ./output.json");
