@@ -21,6 +21,7 @@ TEST(TestCodingChallengeExample, test2) {
         differences += buffer.data();
     }
 
+
     EXPECT_TRUE(differences.empty());
     std::system("rm ./output.json");
 }

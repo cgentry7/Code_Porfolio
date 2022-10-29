@@ -1,6 +1,7 @@
 #include "Node.h"
 #include <assert.h>
 
+
 Node::UP_Node Node::init_new_node(const std::string& value) {
     UP_Node node(new Node());
     node->value(value);
@@ -12,10 +13,12 @@ Node::UP_Node Node::init_from_json(const json& input_json) {
     assert(input_json.size() == 1);
     for (auto& [key, value] : input_json.items()) {
         assert((value.type() == json::value_t::object) || (value.type() == json::value_t::string));
-        node->value(input_json[key]);
+        node->value(key);
         if (value.type() == json::value_t::object) {
-            for (auto& child : value) {
-                node->add_child(init_from_json(child));
+            for (auto& [child_key, child_value] : value.items()) {
+                json child_json;
+                child_json[child_key] = child_value;
+                node->add_child(init_from_json(child_json));
             }
         }
         if (value.type() == json::value_t::string) {

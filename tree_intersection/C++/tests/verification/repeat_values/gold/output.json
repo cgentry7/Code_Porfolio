@@ -4,9 +4,9 @@
             "B": "Leaf"
         },
         "D": {
+            "C": "Leaf",
             "E": "Leaf",
-            "F": "Leaf",
-            "C": "Leaf"
+            "F": "Leaf"
         }
     }
 }

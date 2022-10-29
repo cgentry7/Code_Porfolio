@@ -7,6 +7,8 @@
 #include <string>
 #include <array>
 
+#include <iostream>
+
 TEST(TestNoMatch, test4) {
 
     std::system("../source/tree_intersection_run ../../tests/verification/no_match/input.json");
@@ -20,6 +22,8 @@ TEST(TestNoMatch, test4) {
     while (fgets(buffer.data(), buffer.size(), pipe.get()) != nullptr) {
         differences += buffer.data();
     }
+
+    std::cout << differences << std::endl;
 
     EXPECT_TRUE(differences.empty());
     std::system("rm ./output.json");
