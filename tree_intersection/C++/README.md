@@ -1,4 +1,4 @@
-# WIP: Tree Intersection  (This is currently a work in progress and has not been finalized yet!)
+# Tree Intersection
 
 A C++ code for performing a basic tree intersection as part of a coding challenge problem
 
@@ -25,3 +25,9 @@ To run the unit & verification tests, simply execute the following:
 ```
 <tree_intersection_dir>/build/tests/tree_intersection_tst
 ```
+
+To Do
+-------
+- The CMake is a messy and doesn't update the main executable.  Need to fix.
+- The verification test file comparison is kludgy, need to clean.
+- Need to implement a const accessor to children if possible
