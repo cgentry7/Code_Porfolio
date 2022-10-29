@@ -29,4 +29,3 @@ To run the unit & verification tests, simply execute the following:
 To Do
 -------
 - The verification test file comparison is kludgy, need to clean.
-- Need to implement a const accessor to children if possible
