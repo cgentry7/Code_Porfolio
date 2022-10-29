@@ -28,6 +28,6 @@ To run the unit & verification tests, simply execute the following:
 
 To Do
 -------
-- The CMake is a messy and doesn't update the main executable.  Need to fix.
+- The CMake doesn't update the main executable.  Need to fix.
 - The verification test file comparison is kludgy, need to clean.
 - Need to implement a const accessor to children if possible
