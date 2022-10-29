@@ -90,13 +90,6 @@ class Node(object):
         This implementation is loosely inspired by this post:
         https://stackoverflow.com/questions/62493961/algorithm-for-finding-equal-paths-in-two-trees
 
-        My personal MO, especially when being expedient, is to search for known solutions for a given
-        problem when I know it likely already exists.  I hate re-inventing the square wheel and have
-        witnessed it too many times in nuclear engineering.  I likely would have come to this or similar
-        algo eventually if I sat down and thought about it more (i.e. I didn't just have it lying
-        around in my brain ready to go).  I did have the data structure almost immediately in mind, but
-        how to efficiently compare trees and construct the intersect wasn't in the forefront of my mind.
-
         Parameters
         ----------
         other : Node

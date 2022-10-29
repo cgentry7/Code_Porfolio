@@ -82,7 +82,7 @@ public:
      * @param other The other node tree structure to compare against for the intersection
      * @return  The intersection of the two node trees structures
      */
-    UP_Node intersection(const Node& other) const;
+    UP_Node intersection(Node& other) const;
 
     /**
      * @brief Returns the node tree structure as a JSON data structure
