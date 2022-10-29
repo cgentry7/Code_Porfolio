@@ -28,7 +28,7 @@ Node::UP_Node Node::init_from_json(const json& input_json) {
     return std::move(node);
 }
 
-Node::UP_Node Node::intersection(Node& other) const
+Node::UP_Node Node::intersection(const Node& other) const
 {
     UP_Node node(new Node());
     if (this->value() == other.value()) {
@@ -38,7 +38,7 @@ Node::UP_Node Node::intersection(Node& other) const
         else {
             Nodes intersecting_children;
             for (auto& self_child : _children) {
-                for (auto& other_child : other.children()) {
+                for (const auto& other_child : other.children()) {
                     auto intersection_node = self_child->intersection(*other_child);
                     bool children_intersect = !(intersection_node->value().empty());
                     if (children_intersect){

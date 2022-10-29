@@ -53,10 +53,16 @@ public:
     void value(const std::string& value) { this->_value = value; }
 
     /**
+     * @brief Const getter for the Node children
+     * @return  The children of the Node
+     */
+    const Nodes& children() const { return _children; }
+
+    /**
      * @brief Getter for the Node children
      * @return  The children of the Node
      */
-    Nodes& children() { return this->_children; }
+    Nodes& children() { return _children; }
 
     /**
      * @brief Indicator of whether or not a Node is a Leaf (i.e. has no children)
@@ -82,7 +88,7 @@ public:
      * @param other The other node tree structure to compare against for the intersection
      * @return  The intersection of the two node trees structures
      */
-    UP_Node intersection(Node& other) const;
+    UP_Node intersection(const Node& other) const;
 
     /**
      * @brief Returns the node tree structure as a JSON data structure
