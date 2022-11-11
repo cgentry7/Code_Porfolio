@@ -6,6 +6,7 @@ Version / Module Requirements
 -----------------------------
 - Written using Python 3.10.6
 - Pytest module required for execution of unit tests
+- Uses nvcr.io/nvidia/tensorflow:22.07-tf2-py3
 
 User Instructions
 ------------------
