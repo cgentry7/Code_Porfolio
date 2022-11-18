@@ -32,17 +32,21 @@ python run_microwave.py
 Please enter microwave key commands:
 1
 
+
 00:01
 Please enter microwave key commands:
 0
+
 
 00:10
 Please enter microwave key commands:
 3
 
+
 01:30
 Please enter microwave key commands:
 START
+
 
 01:30
 01:29
