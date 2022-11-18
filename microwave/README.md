@@ -1,4 +1,4 @@
-# Microwave (WIP!!!!)
+# Microwave
 
 A code for simulating the behavior of a simple microwave
 
