@@ -82,7 +82,7 @@ Requirements
 
 Solution Design
 ---------------
-- `microwave.py` has a `Microwave` class which has a timer, a method for adding time to the timer `add_time` which takes single digit non-negative integers and appends the timer in a manner which mimics a typical microwave, a method for decreasing the timer by one second `count_down_one_second`, and a method for getting a string representation of the current time condition `current_time`.  A `Microwave` object timer initializes with a timer of "00:00" and can go up to "99:99", as is enforced by the `add_time` interface (Satisfies Requirement 1 & 9).
+- `microwave.py` has a `Microwave` class which has a timer, a method for adding time to the timer `add_time` which takes single digit non-negative integers and appends the timer in a manner which mimics a typical microwave, a method for decreasing the timer by one second `count_down_one_second`, and a method for getting a string representation of the current time condition `current_time`.  A `Microwave` object timer initializes with a timer of "00:00" and can go up to "99:99", as is enforced by the `add_time` interface (Satisfies Requirement 1, 8, & 9).
 - `run_microwave.py` enforces the interface constrainted via the UI (Satisfies Requirement 2 & 9)
 - `run_microwave.py` prints the appropriate user feedback (Satisfies Requirement 3)
 - `run_microwave.py` prints the current time after every button press using the `current_time` method of the operable `Microwave` object (Satisfies Requirement 4)
